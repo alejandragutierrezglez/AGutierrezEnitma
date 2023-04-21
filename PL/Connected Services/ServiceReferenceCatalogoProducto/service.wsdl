@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceCatalogoProducto" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Proyecto_ENT" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceCatalogoProducto_RecuperarCatalogo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCatalogo" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_RecuperarCatalogo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCatalogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_RecuperarCatalogoGetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCatalogoGetById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_RecuperarCatalogoGetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecuperarCatalogoGetByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_AgregarProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_AgregarProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_ActualizarProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarProducto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCatalogoProducto_ActualizarProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceCatalogoProducto">
+    <wsdl:operation name="RecuperarCatalogo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/RecuperarCatalogo" message="tns:IServiceCatalogoProducto_RecuperarCatalogo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/RecuperarCatalogoResponse" message="tns:IServiceCatalogoProducto_RecuperarCatalogo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCatalogoGetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/RecuperarCatalogoGetById" message="tns:IServiceCatalogoProducto_RecuperarCatalogoGetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/RecuperarCatalogoGetByIdResponse" message="tns:IServiceCatalogoProducto_RecuperarCatalogoGetById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/AgregarProducto" message="tns:IServiceCatalogoProducto_AgregarProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/AgregarProductoResponse" message="tns:IServiceCatalogoProducto_AgregarProducto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/ActualizarProducto" message="tns:IServiceCatalogoProducto_ActualizarProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCatalogoProducto/ActualizarProductoResponse" message="tns:IServiceCatalogoProducto_ActualizarProducto_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceCatalogoProducto" type="tns:IServiceCatalogoProducto">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RecuperarCatalogo">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogoProducto/RecuperarCatalogo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarCatalogoGetById">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogoProducto/RecuperarCatalogoGetById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarProducto">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogoProducto/AgregarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarProducto">
+      <soap:operation soapAction="http://tempuri.org/IServiceCatalogoProducto/ActualizarProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCatalogoProducto">
+    <wsdl:port name="BasicHttpBinding_IServiceCatalogoProducto" binding="tns:BasicHttpBinding_IServiceCatalogoProducto">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/SL/ServiceCatalogoProducto/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
